@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "npx http-server --proxy http://localhost:8085"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
