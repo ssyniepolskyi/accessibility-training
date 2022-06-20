@@ -17,7 +17,7 @@
   padding: 2rem;
 }
 .tab-pane {
-  display: none;
+  display: block;
 }
 .tab-pane.is-active {
   display: block;
