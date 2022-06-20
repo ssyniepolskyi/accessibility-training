@@ -51,24 +51,40 @@
           </div>
 
           <nav id="navbarMenu" class="navbar-menu" aria-label="Main navigation">
-            <ul class="navbar-end">
-              <li class="navbar-item">
-                <a href="#" class="button is-white is-outlined">
+            <ul class="navbar-end" id="appmenu"- role="menubar">
+              <li class="navbar-item" role="menuitem" aria-haspopup="false">
+                <a href="#" id="homeLink" class="button is-white is-outlined">
                   <span class="icon" aria-hidden="true">
                     <i class="fa fa-home"></i>
                   </span>
                   <span>Home</span>
                 </a>
               </li>
-              <li class="navbar-item">
-                <a href="#" class="button is-white is-outlined">
+              <li class="navbar-item" role="menuitem" aria-haspopup="true">
+                <button class="button is-white is-outlined" id="hasSubmenuBtn" aria-haspopup="menu" aria-expanded="false">
+                  <span class="icon" aria-hidden="true">
+                    <i class="fab fa-superpowers"></i>
+                  </span>
+                  <span>Has dropdown</span>
+                </button>
+                <ul role="menu" class="navbar-end"  id="hasSubmenuItem">
+                  <li role="menuitem"><a href="#" class="is-white" data-index="1" id="hasSubmenuItem1" tabindex="-1" class="navbar-item">Administration</a></li>
+                  <li role="menuitem"><a href="#" class="is-white" data-index="2" id="hasSubmenuItem2" tabindex="-1" class="navbar-item">Team Settings</a></li>
+                  <li role="menuitem"><a href="#" class="is-white" data-index="3" id="hasSubmenuItem3" tabindex="-1" class="navbar-item">Manage Your Team</a></li>
+                  <li role="menuitem"><a href="#" class="is-white" data-index="4" id="hasSubmenuItem4" tabindex="-1" class="navbar-item">Invitation</a></li>
+                  <li role="menuitem"><hr class="navbar-divider"></li>
+                  <li role="menuitem"><a href="#" class="is-white" data-index="5" id="hasSubmenuItem5" tabindex="-1">Authentication</a></li>
+                </ul>
+              </li>
+              <li class="navbar-item" role="menuitem" aria-haspopup="false">
+                <a href="#" class="button is-white is-outlined" id="examplesLink">
                   <span class="icon" aria-hidden="true">
                     <i class="fab fa-superpowers"></i>
                   </span>
                   <span>Examples</span>
                 </a>
               </li>
-              <li class="navbar-item">
+              <li class="navbar-item" role="menuitem" aria-haspopup="false">
                 <a href="#" class="button is-white is-outlined">
                   <span class="icon" aria-hidden="true">
                     <i class="fa fa-book"></i>
@@ -76,7 +92,7 @@
                   <span>Documentation</span>
                 </a>
               </li>
-              <li class="navbar-item">
+              <li class="navbar-item" role="menuitem" aria-haspopup="false">
                 <a href="#" class="button is-white is-outlined">
                   <span class="icon" aria-hidden="true">
                     <i class="fab fa-github"></i>
@@ -297,6 +313,7 @@
     </section>
 
     <section id="list-of-topics" aria-labelledby="topics">
+
       <div class="hero is-info">
         <div class="hero-body">
           <div class="container">
@@ -305,26 +322,20 @@
           </div>
         </div>
         <div class="tabs is-boxed is-centered main-menu" id="nav">
-          <ul role="tablist" aria-owns="1 3 4">
-            <li data-target="pane-1" id="1" role="presentation" class="is-active">
-              <button aria-controls="pane-1" type="submit" tabindex="0">
-                <span class="icon is-small"><i class="fa fa-image" aria-hidden="true"></i></span>
+          <div class="tablist" role="tablist" aria-label="tablist picture, team and video">
+            <button class="is-active" role="tab" aria-selected="true" aria-controls="pane-1" data-target="pane-1" id="1" >
+                <span class="icon is-small"><i aria-hidden="true"class="fa fa-image"></i></span>
                 <span>Pictures</span>
-              </button>
-            </li>
-            <li data-target="pane-3" id="3" role="presentation">
-              <button aria-controls="pane-3" type="submit" tabindex="0">
-                <span class="icon is-small"><i class="fab fa-superpowers" aria-hidden="true"></i></span>
+            </button>
+            <button role="tab" tabindex="-1" aria-selected="false" aria-controls="pane-3" id="3" data-target="pane-3">
+                <span class="icon is-small"><i aria-hidden="true" class="fab fa-superpowers"></i></span>
                 <span>Team</span>
-              </button>
-            </li>
-            <li data-target="pane-4" id="4" role="presentation">
-              <button aria-controls="pane-4" type="submit" tabindex="0">
-                <span class="icon is-small"><i class="fa fa-film" aria-hidden="true"></i></span>
+            </button>
+            <button role="tab" tabindex="-1" aria-selected="false" aria-controls="pane-4" data-target="pane-4" id="4" data-deletable=""> 
+                <span class="icon is-small"><i aria-hidden="true" class="fa fa-film"></i></span>
                 <span>Video</span>
-              </button>
-            </li>
-          </ul>
+            </button>
+          </div>
         </div>
       </div>
       <div class="tab-content container" aria-label="Topics content">
@@ -1232,5 +1243,6 @@
 
   <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
   <script async src="js/custom.js"></script>
+  <script async src="js/tabpanel.js"></script>
 </body>
 </html>

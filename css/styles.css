@@ -17,7 +17,7 @@
   padding: 2rem;
 }
 .tab-pane {
-  display: none;
+  display: block;
 }
 .tab-pane.is-active {
   display: block;
@@ -400,4 +400,92 @@ label a,
 div.content a {
   color: #0055bd;
   text-decoration: underline;
+}
+
+.tab-pane[hidden] {
+  display: none;
+}
+
+.tabs.is-centered .tablist {
+  justify-content: center;
+}
+
+.hero .tabs .tablist {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border-bottom: none;
+  align-items: center;
+}
+
+.hero.is-info .tabs.is-boxed button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1px;
+  padding: 10px;
+  vertical-align: top;
+  color: white;
+  background: transparent;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hero.is-info .tabs.is-boxed button.is-active,
+.hero.is-info .tabs.is-toggle li.is-active button,
+.hero.is-info .tabs.is-boxed button.is-active:hover,
+.hero.is-info .tabs.is-toggle li.is-active button:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #094e7b;
+  border: 1px solid transparent;
+}
+
+/* nav */
+#appmenu > li > ul {
+  display: none;
+  position: absolute;
+  left: -13px;
+  right: 0;
+  top: 100%;
+  padding: 20px;
+  margin: 0;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 8px 8px rgb(0 53 132 / 62%), 0 0 0 1px rgb(10 10 10 / 10%);
+  width: 200%;
+  text-align: left;
+  width: 200px;
+}
+#appmenu > li > ul > li {
+  margin-bottom: 10px;
+}
+#appmenu > li > ul > li > a {
+  color: rgb(63, 63, 63);
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+#appmenu > li > ul > li > a:hover {
+  color: #094e7b;
+  border-bottom: 1px solid #094e7b;
+}
+
+#appmenu .navbar-divider {
+  background-color: rgb(63, 63, 63);
+}
+
+#appmenu > li:hover > ul {
+  display: block;
+}
+
+#appmenu > li[aria-expanded='true'] > ul {
+  display: block;
+}
+
+#appmenu > li:focus .button.is-white.is-outlined {
+  background-color: #fff;
+  border-color: #fff;
+  color: #0a0a0a;
 }
